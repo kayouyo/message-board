@@ -1,12 +1,19 @@
 <!--<h1>Messages#index</h1>-->
 <!--<p>Find me in app/views/messages/index.html.erb</p>-->
 
-<h1>List of Messages</h1>
-<% @messages.each do |message| %>
-  名前:<%= message.name %>
-  内容:<%= message.body %>
-  <br>
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    List of Miffy's Friends
+  </div>
+    
+  <div class="panel-body">
+    <% @messages.each do |message| %>
+      <span class="label label-info"><%= message.name %></span>
+      <%= message.body %>
+      <br>
+    <% end %>
+  </div>
+</div>
 
 
 
@@ -14,7 +21,7 @@
   Name:
   <%= f.text_field :name %>
 
-  Contents:
+  Description:
   <%= f.text_field :body %>
   <%= f.submit %>
 <% end %>
