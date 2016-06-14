@@ -1,14 +1,14 @@
 <!--<h1>Messages#index</h1>-->
 <!--<p>Find me in app/views/messages/index.html.erb</p>-->
 
-<div class="panel panel-default">
+<div class="panel panel-danger">
   <div class="panel-heading">
     List of Miffy's Friends
   </div>
     
   <div class="panel-body">
     <% @messages.each do |message| %>
-      <span class="label label-info"><%= message.name %></span>
+      <span class="label label-danger"><%= message.name %></span>
       <%= message.body %>
       <br>
     <% end %>
@@ -20,8 +20,10 @@
 <%= form_for(@message) do |f| %>
   Name:
   <%= f.text_field :name %>
-
+  <br>
   Description:
-  <%= f.text_area :body %>
-  <%= f.submit "Make New Friends", class: "btn btn-sm btn-primary" %>
+  <br>
+  <%= f.text_area :body, size: "29x10"  %>
+  <br>
+  <%= f.submit "Make New Friends", class: "btn btn-sm btn-danger" %>
 <% end %>
