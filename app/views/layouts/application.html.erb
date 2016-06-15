@@ -16,7 +16,13 @@
     </div>
   </nav>
   <div class="container">
-    <%= yield %>
+      <!--noticeがある時にはその中身を表示します-->
+      <% if notice %>
+       <div class="alert alert-warning">
+         <%= notice %>
+        </div>
+       <% end %>
+      <%= yield %>
   </div>
 </body>
 </html>
