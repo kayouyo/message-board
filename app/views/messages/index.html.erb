@@ -15,30 +15,8 @@
   </div>
 </div>
 
+<% #部分テンプレートを読み込んでいる %>
+<%= render 'form' %>
 
 
 
-
-<%= form_for(@message, html: {class: "form-horizontal"}) do |f| %>
-  <% if @message.errors.present? %>
-    <div class="alert alert-danger">
-      <%= alert %>
-      <ul>
-        <% @message.errors.full_messages.each do |full_message| %>
-          <li>
-            <%= full_message %>
-          </li>
-        <% end %> 
-      </ul>
-    </div>
-  <% end %>
-  
-  <label for="message_name" class="control-label col-md-1">Name:</label>
-  <%= f.text_field :name, :class=> "form-control" %>
-  <br>
-  <label for="message_body" class="control-label col-md-1">Description:</label>
-  <br>
-  <%= f.text_area :body, :class=>"form-control" %>
-  <br>
-  <%= f.submit "Make New Friends", class: "btn btn-sm btn-danger" %>
-<% end %>
