@@ -17,13 +17,15 @@
 
 
 
-<%= form_for(@message) do |f| %>
+
+
+<%= form_for(@message, html: {class: "form-horizontal"}) do |f| %>
   Name:
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :class=> "form-control" %>
   <br>
   Description:
   <br>
-  <%= f.text_area :body, size: "29x10"  %>
+  <%= f.text_area :body, :class=>"form-control"   %>
   <br>
   <%= f.submit "Make New Friends", class: "btn btn-sm btn-danger" %>
 <% end %>
